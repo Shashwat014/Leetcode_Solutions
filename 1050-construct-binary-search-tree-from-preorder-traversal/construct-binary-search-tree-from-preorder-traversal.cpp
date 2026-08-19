@@ -11,6 +11,7 @@
  */
 class Solution {
 private:
+// int i should be accepted by refernce so that the eight and left subtree should go for the different index value from preorder vector
     TreeNode* build(int &i ,vector<int>& p , int bound ){
         if(i==p.size() || p[i] > bound)return nullptr;
         TreeNode* r=new TreeNode(p[i++]);
