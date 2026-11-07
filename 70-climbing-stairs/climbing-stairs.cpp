@@ -37,17 +37,28 @@ public:
     // }
 
     // tabulation
+    // int climbStairs(int n) {
+    //     vector<int>dp(n+1,-1);
+    //     dp[0]=1;
+    //     dp[1]=1;
+    //     for(int i=2; i<=n ; i++){
+    //         int left =dp[i-1];
+    //         int right =dp[i-2];
+    //         dp[i]=left+right;
+    //     }
+    //     return dp[n];
+    // }
+
+    // space optimize
+
     int climbStairs(int n) {
-        vector<int>dp(n+1,-1);
-        dp[0]=1;
-        dp[1]=1;
+        
+        int prev2= 1,prev=1;
         for(int i=2; i<=n ; i++){
-            int left =dp[i-1];
-            int right =dp[i-2];
-            dp[i]=left+right;
+           int cur=prev2+prev;
+           prev2=prev;
+           prev=cur;
         }
-        return dp[n];
-  
-  
+        return prev;
     }
 };
